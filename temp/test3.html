@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .container {
+        position: relative;
+        text-align: center;
+        color: white;
+        width: 300px;
+        height: 200px;
+        padding: 20px;
+      }
+
+      .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+      }
+
+      .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+      }
+
+      .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+      }
+
+      .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+      }
+
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <script>
+      function createImage(title, imageURL, text) {
+        let rootEleent = document.createElement("div");
+        rootEleent.setAttribute("class", "container");
+
+        let imageElement = document.createElement("img");
+        imageElement.setAttribute("src", imageURL);
+        imageElement.setAttribute("style", "width: 100%");
+
+        let titleElement = document.createElement("div");
+        titleElement.setAttribute("class", "top-left");
+        titleElement.innerHTML = title;
+
+        let textElement = document.createElement("div");
+        textElement.setAttribute("class", "centered");
+        textElement.innerHTML = text;
+
+        rootEleent.appendChild(imageElement);
+        rootEleent.appendChild(titleElement);
+        rootEleent.appendChild(textElement);
+
+        document.getElementById("images").appendChild(rootEleent);
+
+        return rootEleent;
+      }
+      function test() {
+        console.log("test");
+        createImage(
+          "And stay alive",
+          "https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg",
+          "Some content."
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Image Text</h2>
+    <p>How to place text over an image:</p>
+
+    <div id="images">
+      <div class="container">
+        <img
+          src="https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg"
+          style="width: 100%"
+        />
+        <div class="bottom-left">Bottom Left</div>
+        <div class="top-left">Top Left</div>
+        <div class="top-right">Top Right</div>
+        <div class="bottom-right">Bottom Right</div>
+        <div class="centered">Centered</div>
+      </div>
+    </div>
+    <button onclick="test()">test</button>
+  </body>
+</html>

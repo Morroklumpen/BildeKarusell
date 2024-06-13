@@ -6,10 +6,11 @@
         position: relative;
         width: 300px;
         height: 200px;
+        /* margin: 20px; */
+        padding: 20px;
       }
 
       .image {
-        background-image: url("https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg");
         background-size: cover;
         width: 100%;
         height: 100%;
@@ -29,11 +30,48 @@
         align-items: center;
         background-color: rgba(0, 0, 0, 0.5);
       }
+      .images {
+        padding: 20px;
+      }
     </style>
+
+    <script>
+      function test() {
+        let root = document.createElement("div");
+        root.setAttribute("class", "container");
+
+        // document.getElementById("main").innerHTML = "Hello World!";
+        let e = document
+          .getElementById("images")
+          .appendChild(document.createElement("img"));
+        e.setAttribute(
+          "src",
+          "https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg"
+        );
+      }
+    </script>
   </head>
-  <body>
+  <body id="images">
     <div class="container">
-      <div class="image"></div>
+      <div
+        class="image"
+        style="
+          background-image: url('https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg');
+        "
+      ></div>
+      <div class="paragraph">
+        <p>This Titel</p>
+        <p>this is text</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div
+        class="image"
+        style="
+          background-image: url('https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg');
+        "
+      ></div>
       <div class="paragraph">
         <p>
           This is a hidden paragraph This is a hidden paragraph This is a hidden
@@ -43,7 +81,12 @@
       </div>
     </div>
     <div class="container">
-      <div class="image"></div>
+      <div
+        class="image"
+        style="
+          background-image: url('https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg');
+        "
+      ></div>
       <div class="paragraph">
         <p>
           This is a hidden paragraph This is a hidden paragraph This is a hidden

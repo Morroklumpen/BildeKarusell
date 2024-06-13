@@ -41,10 +41,10 @@
       <br />
       <div>
         <% data.payload.forEach(function(item){ %>
-        <div class="quoteRecord">
-          <div class="quote"><%= item.title %></div>
-          <div class="quoteSource"><%= item.imageURL %></div>
-          <div class="quoteSource"><%= item.text %></div>
+        <div class="container">
+          <img src="<%= item.imageURL %>" alt="" style="width: 100%" />
+          <div class="top-left"><%= item.title %></div>
+          <div class="centered"><%= item.text %></div>
         </div>
         <% }); %>
       </div>

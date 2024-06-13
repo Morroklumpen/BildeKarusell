@@ -142,8 +142,8 @@ const login = async (req, res, next) => {
   return;
 };
 
-const getUserQuotes = async (req, res) => {
-  console.log("getUserQuotes");
+const getUserRandomImageFrame = async (req, res) => {
+  console.log("getUserRandomImageFrame");
 
   let feedback = createFeedback(500, "Service unavailable", false);
   const { username } = req.params;
@@ -151,8 +151,8 @@ const getUserQuotes = async (req, res) => {
   request(API_URL + username, function (error, response, body) {
     feedback = JSON.parse(body);
 
-    res.render("userQuotes", {
-      title: username + "'s quotes",
+    res.render("carousel", {
+      title: username,
       data: feedback,
     });
   });
@@ -251,7 +251,7 @@ const getLogin = (get, res, next) => {
 
 module.exports = {
   createuser,
-  getUserQuotes,
+  getUserQuotes: getUserRandomImageFrame,
   login,
   home,
   getLogin,
