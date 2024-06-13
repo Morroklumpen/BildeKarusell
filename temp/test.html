@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Template</title>
+    <meta charset="utf-8" />
+    <style>
+      header {
+        background: url(https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg);
+      }
+
+      h2 {
+        background: inherit;
+        background-clip: text;
+        color: transparent;
+        filter: invert(1) grayscale(1) contrast(9);
+      }
+    </style>
+
+    <script>
+      function test() {
+        // document.getElementById("main").innerHTML = "Hello World!";
+        let e = document
+          .getElementById("images")
+          .appendChild(document.createElement("img"));
+        e.setAttribute(
+          "src",
+          "https://gfx.nrk.no/cT7DdLJCbOyL46pb6OJCbgZf36QvpPdmlzb8T32kC89g.jpg"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h2 contenteditable role="textbox" aria-multiline="true">
+        And stay alive
+      </h2>
+      <p>A topnav, content and a footer.</p>
+    </div>
+    <div id="main">
+      <p>Some content.</p>
+    </div>
+    <button onclick="test()">test</button>
+    <div id="images"></div>
+    <article>
+      <header>
+           
+        <h2>
+          Lorem Ipsum dolor set amet.... adf aølsdk fjøldjasf øldjas
+          dølskfjølsdfj ødlskfj ølaskj dsølfkjdasøl fkdjas
+        </h2>
+        <p>Posted by John Doe</p>
+        <p>Some additional information here</p>
+      </header>
+      <p>Lorem Ipsum dolor set amet....</p>
+    </article>
+  </body>
+</html>

@@ -1,2 +1,2 @@
-# BildeKarusell
-Eksamensoppgaven 2024
+# gjennomgang
+frontend og backend
