@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('partials/head'); %>
+  </head>
+
+  <body>
+    <header><%- include("partials/header"); %></header>
+
+    <div class="mainContainer">
+      <div>
+        <h2>New Image Frame</h2>
+
+        <form action="/home" method="post">
+          <input
+            type="text"
+            id="title"
+            name="title"
+            size="40"
+            placeholder="FrameTitle"
+          /><br />
+          <input
+            type="text"
+            id="imageURL"
+            name="imageURL"
+            size="40"
+            placeholder="ImageURL"
+          /><br />
+          <input
+            type="text"
+            id="text"
+            name="text"
+            size="40"
+            placeholder="FrameText - max 100 words"
+          /><br />
+          <br /><br />
+          <input type="submit" value="Add frame" size="40" />
+        </form>
+      </div>
+      <br />
+      <br />
+      <div>
+        <% data.payload.forEach(function(item){ %>
+        <div class="quoteRecord">
+          <div class="quote"><%= item.title %></div>
+          <div class="quoteSource"><%= item.imageURL %></div>
+          <div class="quoteSource"><%= item.text %></div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
+    <%- include('partials/footer'); %>
+  </body>
+</html>
