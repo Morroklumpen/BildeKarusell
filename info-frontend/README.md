@@ -1,2 +1,0 @@
-# gjennomgang
-frontend og backend
